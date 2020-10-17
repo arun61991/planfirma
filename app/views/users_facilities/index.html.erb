@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Users Facilities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Facility</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users_facilities.each do |users_facility| %>
+      <tr>
+        <td><%= users_facility.user_id %></td>
+        <td><%= users_facility.facility_id %></td>
+        <td><%= link_to 'Show', users_facility %></td>
+        <td><%= link_to 'Edit', edit_users_facility_path(users_facility) %></td>
+        <td><%= link_to 'Destroy', users_facility, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Users Facility', new_users_facility_path %>
